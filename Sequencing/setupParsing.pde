@@ -10,11 +10,12 @@ ArrayList<String> sequence = new ArrayList<String>();
 ArrayList<String> given = new ArrayList<String>();
 
 //Exons to be compared
-ArrayList<Exon> s_Ex = new ArrayList<Exon>();
-ArrayList<Exon> g_Ex = new ArrayList<Exon>();
+ArrayList<Exon> s_Exon = new ArrayList<Exon>();
+ArrayList<Exon> g_Exon = new ArrayList<Exon>();
 
 
 String stringRow;
+String stringRow2;
 
 
 class Exon{
@@ -24,6 +25,12 @@ class Exon{
   Exon(ArrayList<String> input){
     singles = input;
     lengthOf = singles.size();
+  }
+}
+
+void printExon(Exon thisE){
+  for(int i = 0; i < thisE.lengthOf; i++){
+    print(thisE.singles.get(i));
   }
 }
 
@@ -63,6 +70,7 @@ saveTable(resultsTable2, "givenGenTable.csv");
 
 
 ArrayList<String> newStr = new ArrayList<String>();
+ArrayList<String> newStr2 = new ArrayList<String>();
 
 void exonParser(){
   loader = loadTable("sequenceGenTable.csv", "csv");
@@ -73,17 +81,17 @@ void exonParser(){
         thisChar = String.valueOf(stringRow.charAt(i));
         newStr.add(thisChar); 
       }
-      s_Ex.add(new Exon(newStr));
+      s_Exon.add(new Exon(newStr));
   }
   
   loader = loadTable("givenGenTable.csv", "csv");
   for(TableRow row : loader.rows()){
-      stringRow = row.getString(0);
-      String thisChar;
-      for(int i = 0; i < stringRow.length(); i++){
-        thisChar = String.valueOf(stringRow.charAt(i));
-        newStr.add(thisChar); 
+      stringRow2 = row.getString(0);
+      String thisChar2;
+      for(int i = 0; i < stringRow2.length(); i++){
+        thisChar2 = String.valueOf(stringRow2.charAt(i));
+        newStr2.add(thisChar2); 
       }
-      g_Ex.add(new Exon(newStr));
+      g_Exon.add(new Exon(newStr2));
   }
 }  
