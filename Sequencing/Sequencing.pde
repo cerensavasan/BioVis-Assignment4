@@ -3,3 +3,7 @@
 //csavasan@wpi.edu
 
 
+void setup(){
+  tableParser();  //in setupParsing.pde
+  exonParser();   //in setupParsing.pde
+}
