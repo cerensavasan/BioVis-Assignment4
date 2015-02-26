@@ -13,6 +13,8 @@ ArrayList<String> given = new ArrayList<String>();
 ArrayList<Exon> s_Exon = new ArrayList<Exon>();
 ArrayList<Exon> g_Exon = new ArrayList<Exon>();
 
+String test1;
+String test2;
 
 String stringRow;
 String stringRow2;
@@ -35,6 +37,7 @@ void printExon(Exon thisE){
 }
 
 
+
 void tableParser(){
   loader = loadTable("sequence.fasta", "csv");
   boolean firstRow = false;
@@ -43,6 +46,9 @@ void tableParser(){
     if(firstRow == true){
       resultsTable.addRow(row); //strings and numerics get added as they are
       stringRow = row.getString(0);
+      test1 = stringRow;
+      test2 = stringRow;
+      println("string row is:" + stringRow);
       sequence.add(stringRow);
     }
     if(firstRow == false){
@@ -57,6 +63,7 @@ void tableParser(){
     if(firstRow == true){
       resultsTable2.addRow(row); //strings and numerics get added as they are
       stringRow = row.getString(0);
+      test1 = stringRow;
       given.add(stringRow);
     }
     if(firstRow == false){
