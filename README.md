@@ -2,6 +2,7 @@
 by Ceren Savasan
 
 ##Design of the Visualization
+I chose to use letters to just display the alignment as it is.
 
 ##Source Code
 I am using the following fasta files as data input.
