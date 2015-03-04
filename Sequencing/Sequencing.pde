@@ -167,22 +167,56 @@ String reduceTo40(String s){
 
 //-----------------------------DRAW A FINAL ALIGNMENT-------------------------------//
 void drawAlign(String[] finalAlign, int thisy){ 
-  fill(0);
   for(int i = 0; i < finalAlign[0].length(); i++){
     char c = finalAlign[0].charAt(i);
     textSize(10);
+    stroke(255);
     int xcor = 15 + 8*i;
+    if(c == 'A'){
+      fill(208,28,139);
+    }
+    if(c == 'G'){
+      fill(241,182,218);
+    }
+    if(c == 'T'){
+      fill(184,225,134);
+    }
+    if(c == 'C'){
+      fill(77,172,38);
+    }
+    if(c == '-'){
+      fill(255);
+    }
+    rect(xcor, thisy + 2, 5,5);
+    fill(0);
     text(c, xcor , thisy);
   }
   
   for(int i = 0; i < finalAlign[1].length(); i++){
     char c = finalAlign[1].charAt(i);
     textSize(10);
+    stroke(255);
     int xcor = 15 + 8*i;
-    text(c, xcor , thisy + 20);
-  } 
+    if(c == 'A'){
+      fill(208,28,139);
+    }
+    if(c == 'G'){
+      fill(241,182,218);
+    }
+    if(c == 'T'){
+      fill(184,225,134);
+    }
+    if(c == 'C'){
+      fill(77,172,38);
+    }
+    if(c == '-'){
+      fill(255);
+    }
+    rect(xcor, thisy + 7, 5,5);
+    fill(0);    
+    text(c, xcor , thisy + 25);
+  }
 }
-
 //-----------------------------DRAW EVERYTHING-------------------------------//
 PFont myFont = createFont("Arial", 8);
 
